@@ -6,6 +6,7 @@ import android.app.ActionBar;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -17,10 +18,17 @@ import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+import com.twitter.sdk.android.Twitter;
+import com.twitter.sdk.android.core.TwitterAuthConfig;
+import io.fabric.sdk.android.Fabric;
 
 
 public class MainActivity extends Activity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
+
+    // Note: Your consumer key and secret should be obfuscated in your source code before shipping.
+    private static final String TWITTER_KEY = "e2zFXOkah9DRwPeAqj5ivrFpI";
+    private static final String TWITTER_SECRET = "ApRpUTLFahe65ZOL9u2EjKAOkcKTzVZaHGAW96P0q0JqnNwc8R";
 
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
@@ -35,6 +43,8 @@ public class MainActivity extends Activity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        TwitterAuthConfig authConfig = new TwitterAuthConfig(TWITTER_KEY, TWITTER_SECRET);
+        Fabric.with(this, new Twitter(authConfig));
         setContentView(R.layout.activity_main);
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)
@@ -103,7 +113,18 @@ public class MainActivity extends Activity
             return true;
         }
 
+        if (id == R.id.action_login) {
+            launchLogin();
+            return true;
+        }
+
         return super.onOptionsItemSelected(item);
+    }
+
+    public void launchLogin() {
+        // Launch LoginActivity
+        Intent loginIntent = new Intent(this, LoginActivity.class);
+        startActivity(loginIntent);
     }
 
     /**
