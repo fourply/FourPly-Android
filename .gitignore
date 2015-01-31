@@ -6,3 +6,4 @@
 /build
 strings_secret.xml
 /app/src/main/res/values/strings_secret.xml
+/app/src/main/res/values/com_crashlytics_export_strings.xml
