@@ -113,6 +113,11 @@ public class MainActivity extends Activity
             return true;
         }
 
+        if (id == R.id.action_check_in) {
+            launchSampleBathroom();
+            return true;
+        }
+
         if (id == R.id.action_login) {
             launchLogin();
             return true;
@@ -127,6 +132,11 @@ public class MainActivity extends Activity
         startActivity(loginIntent);
     }
 
+    public void launchSampleBathroom() {
+        // Launch BathroomDetailActivity
+        Intent bathroomIntent = new Intent(this, BathroomDetailActivity.class);
+        startActivity(bathroomIntent);
+    }
     /**
      * A placeholder fragment containing a simple view.
      */

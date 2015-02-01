@@ -12,5 +12,7 @@
     <string name="title_activity_login">LoginActivity</string>
     <string name="hello_world">Hello world!</string>
     <string name="login">Login</string>
+    <string name="title_activity_bathroom_detail">BathroomDetailActivity</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam venenatis ante at lobortis dapibus. Donec dictum sit amet sem ac vestibulum. Mauris luctus consectetur lorem. Nullam luctus pulvinar placerat. Donec placerat metus nec erat viverra aliquam. Maecenas tristique consequat ligula, a dictum justo. Phasellus tellus ligula, commodo sit amet accumsan at, faucibus a quam. Etiam lorem dolor, ultricies ut urna sit amet, accumsan aliquam mi. Praesent in nisl faucibus, pulvinar turpis ac, lacinia est. Ut non dolor nec nisl bibendum sagittis. Sed imperdiet ex odio, iaculis condimentum nisi pretium nec. Donec euismod nulla a lorem aliquet luctus.</string>
 
 </resources>
